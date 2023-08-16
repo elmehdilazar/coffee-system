@@ -2,6 +2,7 @@
 
 namespace App\Models\Product;
 
+use App\Models\Categories\Category;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,4 +17,8 @@ class Product extends Model
         'image'
     ];
     public $timestamps = true;
+    function Category()  {
+        return $this->belongsTo(Category::class,'cat_id','id');
+
+    }
 }

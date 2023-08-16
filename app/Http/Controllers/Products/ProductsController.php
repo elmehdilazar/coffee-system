@@ -11,7 +11,9 @@ class ProductsController extends Controller
     function singleProduct($id)  {
 
         $product=Product::find($id);
-        return view("products.productsingle",compact("product"));
+
+       $relatedProduct=Product::where("cat_id",$product->cat_id)->where('id','!=',$id)->take(4)->get();
+        return view("products.productsingle",compact("product", "relatedProduct"));
 
     }
 }
