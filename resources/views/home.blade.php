@@ -231,7 +231,7 @@
         </div>
     </section>
 
-    <section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(images/bg_2.jpg);"
+    <section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url({{asset('assets/images/bg_2.jpg')}});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -291,50 +291,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                @foreach ($products as $product )
+<div class="col-md-3">
                     <div class="menu-entry">
-                        <a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
+                        <a href="#" class="img" style="background-image: url({{asset("assets/images/".$product->image)}});"></a>
                         <div class="text text-center pt-4">
-                            <h3><a href="#">Coffee Capuccino</a></h3>
-                            <p>A small river named Duden flows by their place and supplies</p>
-                            <p class="price"><span>$5.90</span></p>
-                            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+                            <h3><a href="#"> {{ $product->name}}</a></h3>
+                            <p>{{ $product->description}}</p>
+                            <p class="price"><span>${{ $product->price}}</span></p>
+                            <p><a href="#" class="btn btn-primary btn-outline-primary">showe</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="menu-entry">
-                        <a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
-                        <div class="text text-center pt-4">
-                            <h3><a href="#">Coffee Capuccino</a></h3>
-                            <p>A small river named Duden flows by their place and supplies</p>
-                            <p class="price"><span>$5.90</span></p>
-                            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="menu-entry">
-                        <a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
-                        <div class="text text-center pt-4">
-                            <h3><a href="#">Coffee Capuccino</a></h3>
-                            <p>A small river named Duden flows by their place and supplies</p>
-                            <p class="price"><span>$5.90</span></p>
-                            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="menu-entry">
-                        <a href="#" class="img" style="background-image: url(images/menu-4.jpg);"></a>
-                        <div class="text text-center pt-4">
-                            <h3><a href="#">Coffee Capuccino</a></h3>
-                            <p>A small river named Duden flows by their place and supplies</p>
-                            <p class="price"><span>$5.90</span></p>
-                            <p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </section>
@@ -380,7 +351,7 @@
 
 
 
-    <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);"
+    <section class="ftco-section img" id="ftco-testimony" style="background-image: url({{asset("assets/images/bg_1.jpg")}});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -477,5 +448,5 @@
 
 
 
- 
+
 @endsection
