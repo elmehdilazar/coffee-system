@@ -26,4 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('products')->group(function () {
     Route::get('singleProduct/{id}',[ProductsController::class,'singleProduct'])->name('product.single');
+    Route::post('singleProduct/{id}',[ProductsController::class,'addCart'])->name('cart.add');
 });
+
