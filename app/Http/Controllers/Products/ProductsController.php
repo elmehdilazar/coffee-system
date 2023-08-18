@@ -25,8 +25,26 @@ class ProductsController extends Controller
         'user_id'=> Auth::user()->id,
         'qte'=>$request->qte
     ]);
-    
+
    return redirect()->route('product.single',$id)->with("success", "product added to cart as successfully. ");
+    }
+    //show carts
+    public function showCart()  {
+  $carts=Cart::where('user_id',Auth::user()->id)->orderBy('id', 'DESC')->get();
+        return view("products.cart",compact("carts"));
+    }
+    function deleteCart($id){
+        $cart=Cart::where('id', $id)->where("user_id",Auth::user()->id)->delete();
+
+        if($cart){
+            $class="success";
+            $msg= "product deleted  as successfully. ";
+        }else{
+            $class = "error";
+            $msg = "product not  deleted  as successfully. ";
+        }
+        return redirect()->route("cart.show")->with($class, $msg);
+
     }
 
 }
