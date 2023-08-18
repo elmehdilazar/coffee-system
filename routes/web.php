@@ -33,6 +33,8 @@ Route::prefix('cart')->group(function () {
 
         Route::get('show', [ProductsController::class, 'showCart'])->name('cart.show');
         Route::delete('delete/{id}', [ProductsController::class, 'deleteCart'])->name('cart.delete');
+        Route::post('precheck', [ProductsController::class, 'prepareCheckout'])->name('cart.precheck');
+        Route::get('checkout', [ProductsController::class, 'checkout'])->name('cart.checkout');
 });
 
 
