@@ -197,6 +197,9 @@
 </style>
 @endsection
 @section('content')
+@php
+   $total=0;
+@endphp
     <section class="home-slider owl-carousel">
 
         <div class="slider-item" style="background-image: url({{ asset('assets/images/bg_3.jpg)') }};"
@@ -234,7 +237,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (!empty($carts))
+                                    @if ($carts->count()>0)
                                         @foreach ($carts as $cart)
                                             <tr class="text-center">
                                                 <td class="product-remove">
@@ -269,13 +272,13 @@
                                                     </div>
                                                 </td>
 
-                                                <td class="total">$ {{ $cart->Product->price * $cart->qte }} </td>
+                                                <td class="total">$ {{ $total+=$cart->Product->price * $cart->qte }} </td>
                                             </tr><!-- END TR-->
                                         @endforeach
                                     @else
                                         <tr class="text-center">
-                                            <td colspan="5">
-                                                <h3>no data</h3>
+                                            <td colspan="6">
+                                                <h3 class="text-white">you haven't product in your cart</h3>
 
                                             </td>
                                         </tr>
@@ -287,14 +290,14 @@
                             </table>
                         </div>
                     </div>
-                </div>
+                </div> @if ($carts->count()>0)
                 <div class="row justify-content-end">
                     <div class="col col-lg-3 col-md-6 mt-5 cart-wrap ftco-animate">
                         <div class="cart-total mb-3">
                             <h3>Cart Totals</h3>
                             <p class="d-flex">
                                 <span>Subtotal</span>
-                                <span>$20.60</span>
+                                <span>${{$total}}</span>
                             </p>
                             <p class="d-flex">
                                 <span>Delivery</span>
@@ -310,10 +313,13 @@
                                 <span>$17.60</span>
                             </p>
                         </div>
+
+
                         <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
+
                         </p>
                     </div>
-                </div>
+                </div>@endif
             </div>
         </section>
     </div>
