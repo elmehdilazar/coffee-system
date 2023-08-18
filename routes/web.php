@@ -29,3 +29,10 @@ Route::prefix('products')->group(function () {
     Route::post('singleProduct/{id}',[ProductsController::class,'addCart'])->name('cart.add');
 });
 
+Route::prefix('cart')->group(function () {
+
+        Route::get('show', [ProductsController::class, 'showCart'])->name('cart.show');
+        Route::delete('delete/{id}', [ProductsController::class, 'deleteCart'])->name('cart.delete');
+});
+
+
