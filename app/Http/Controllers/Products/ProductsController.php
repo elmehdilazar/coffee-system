@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart\Cart;
+use App\Models\Order\Detail_order;
+use App\Models\Order\Order;
 use App\Models\Product\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,16 +52,35 @@ class ProductsController extends Controller
     }
     public function prepareCheckout(Request $request)  {
      $value= $request->price;
-     Session::put("price",$value);
-     $newprice=Session::get('price');
+     Session::put("total",$value);
+     $newprice=Session::get('total');
 
      if($newprice>0){
   return Redirect::route('cart.checkout');
      }
     }
     public function checkout()  {
-         echo "welcome to checkout";
 
+return view("products.checkout");
+    }
+   public  function storeOrder(Request $request)  {
+    $cart=Cart::where('user_id', Auth::user()->id)->get();
+
+  $data=array_merge($request->all(),["user_id"=>Auth::user()->id]);
+   $Order = Order::create($data);
+
+foreach ($cart as $key => $value) {
+Detail_order::create(
+    [
+        'order_id' => $Order->id,
+        'prod_id'=> $value->prod_id,
+        'qte'=> $value->qte,
+
+]);
+
+}
+
+echo "payement paypale";
     }
 
 }
