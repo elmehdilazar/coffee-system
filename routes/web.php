@@ -35,6 +35,7 @@ Route::prefix('cart')->group(function () {
         Route::delete('delete/{id}', [ProductsController::class, 'deleteCart'])->name('cart.delete');
         Route::post('precheck', [ProductsController::class, 'prepareCheckout'])->name('cart.precheck');
         Route::get('checkout', [ProductsController::class, 'checkout'])->name('cart.checkout');
+        Route::post('checkout', [ProductsController::class, 'storeOrder'])->name('checkout.proccessing');
 });
 
 
