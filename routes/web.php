@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Products\ProductsController;
+use App\Http\Controllers\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,7 @@ Route::prefix('cart')->group(function () {
         Route::get('paiment', [ProductsController::class, 'paypal_check'])->name('checkout.paiment')->middleware("check.for.price");
         Route::get('success_paiment', [ProductsController::class, 'success_paiment'])->name('checkout.success_paiment')->middleware("check.for.price");
 });
-
+Route::prefix('booking')->group(function () {
+ Route::post('add',[UserController::class, 'booking'])->name("book");
+});
 
