@@ -34,8 +34,10 @@ Route::prefix('cart')->group(function () {
         Route::get('show', [ProductsController::class, 'showCart'])->name('cart.show');
         Route::delete('delete/{id}', [ProductsController::class, 'deleteCart'])->name('cart.delete');
         Route::post('precheck', [ProductsController::class, 'prepareCheckout'])->name('cart.precheck');
-        Route::get('checkout', [ProductsController::class, 'checkout'])->name('cart.checkout');
-        Route::post('checkout', [ProductsController::class, 'storeOrder'])->name('checkout.proccessing');
+        Route::get('checkout', [ProductsController::class, 'checkout'])->name('cart.checkout')->middleware("check.for.price");
+        Route::post('checkout', [ProductsController::class, 'storeOrder'])->name('checkout.proccessing')->middleware("check.for.price");
+        Route::get('paiment', [ProductsController::class, 'paypal_check'])->name('checkout.paiment')->middleware("check.for.price");
+        Route::get('success_paiment', [ProductsController::class, 'success_paiment'])->name('checkout.success_paiment')->middleware("check.for.price");
 });
 
 
