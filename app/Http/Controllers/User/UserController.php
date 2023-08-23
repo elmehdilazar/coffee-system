@@ -4,13 +4,14 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Booking as RequestsBooking;
 use App\Models\Booking\Booking;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
-  function booking(Request $request)  {
+  function booking(RequestsBooking $request)  {
 
     $data=array_merge($request->all(),["user_id"=>Auth::user()->id]);
     $data["date"] = date("Y-m-d",strtotime($data["date"]));
