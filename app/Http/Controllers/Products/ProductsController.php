@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart\Cart;
+use App\Models\Categories\Category;
 use App\Models\Order\Detail_order;
 use App\Models\Order\Order;
 use App\Models\Product\Product;
@@ -94,10 +95,16 @@ class ProductsController extends Controller
     }
     function success_paiment()
     {
-        $cart=Cart::where('user_id', Auth::user()->id)->delete();
-if($cart){
- Session::forget("total");
-}
+        $cart = Cart::where('user_id', Auth::user()->id)->delete();
+        if ($cart) {
+            Session::forget("total");
+        }
         return view("products.success");
+    }
+    function menu()  {
+        $categories=Category::All();
+
+
+  return view("products.menu",compact("categories"));
     }
 }
