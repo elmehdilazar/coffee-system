@@ -37,6 +37,10 @@
                                     >
                               my orders
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('user.booking') }}"
+                                    >
+                              my bookings
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
