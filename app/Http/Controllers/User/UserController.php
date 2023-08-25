@@ -34,4 +34,10 @@ if($data["date"]>date("Y-m-d")){
     return view("user.order",compact("orders"));
 
   }
+    public function displaysBooking()
+    {
+
+        $booking = Booking::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->paginate(4);
+        return view("user.booking", compact("booking"));
+    }
 }
