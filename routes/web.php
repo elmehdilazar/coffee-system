@@ -45,5 +45,7 @@ Route::prefix('user')->group(function () {
  Route::post('Add_booking',[UserController::class, 'booking'])->name("book");
  Route::get('Display_orders',[UserController::class, 'displaysOrders'])->name("user.orders");
  Route::get('Display_booking',[UserController::class, 'displaysBooking'])->name("user.booking");
+ Route::get('review/{id}/{type}',[UserController::class, 'AddReview'])->name("user.review");
+ Route::post('review/{id}/{type}',[UserController::class, 'proccessingreview'])->name("user.reviewsend");
 });
 
