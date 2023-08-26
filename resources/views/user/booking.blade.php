@@ -236,17 +236,18 @@
                                         <th>first_name</th>
                                         <th>last_name</th>
                                         <th>date</th>
-                        
+
                                         <th>phone</th>
                                         <th>message</th>
                                         <th>status</th>
+                                        <th>reviews</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @if ($booking->count() > 0)
                                         @foreach ($booking as $value)
                                         <tr class="text-center">
-                                         
+
 
 
                                                 <td class="product-name">
@@ -272,11 +273,21 @@
 
                                                         @if ($value->status === 'processing')
                                                             <span class="badge badge-pill badge-warning px-4 py-2"><h4>processing</h4></span>
-                                                   
+
                                                         @elseif ($value->status === 'booked')
-                                                            <span class="badge badge-pill badge-success"><h4>booked</h4></span>
+                                                            <span class="badge badge-pill badge-success  px-4 py-"><h4>booked</h4></span>
                                                         @else
-                                                            <span class="badge badge-pill badge-danger"><h4>faild</h4></span>
+                                                            <span class="badge badge-pill badge-danger  px-4 py-"><h4>faild</h4></span>
+                                                        @endif
+
+                                                </td>
+                                                   <td class="text-center ">
+
+
+                                                        @if ($value->status === 'booked')
+                                                           <a href="{{ route('user.review', ['id'=>$value->id,'type'=>'booking']) }}" class="btn btn-primary">make review</a>
+                                                        @else
+                                                            <span ><h4>not booked yet !!</h4></span>
                                                         @endif
 
                                                 </td>

@@ -234,9 +234,10 @@
 
                                         <th>&nbsp;</th>
                                         <th>ref</th>
+                                        <th>status</th>
                                         <th>location</th>
                                         <th>total</th>
-                                        <th>status</th>
+                                        <th>reviews</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -250,6 +251,19 @@
                                                 <td class="product-name">
                                                     <h3>{{ $order->id }} </h3>
                                                 </td>
+                                                <td class="text-center ">
+
+                                                        @if ($order->status === 'processing')
+                                                            <span class="badge badge-pill badge-warning px-4 py-2"><h4>processing</h4></span>
+                                                        @elseif ($order->status === 'in delivering')
+                                                            <span class="badge badge-pill badge-info px-4 py-2"><h4>in delivering</h4></span>
+                                                        @elseif ($order->status === 'delivered')
+                                                            <span class="badge badge-pill badge-success px-4 py-2"><h4>delivered</h4></span>
+                                                        @else
+                                                            <span class="badge badge-pill badge-danger px-4 py-2"><h4>faild</h4></span>
+                                                        @endif
+
+                                                </td>
                                                 <td class="product-name">
                                                     <h3>{{ $order->city }} </h3>
                                                     <p> {{ $order->address }} </p>
@@ -261,14 +275,11 @@
                                                 <td class="total align-center">$ {{ $order->total }} </td>
                                                 <td class="text-center ">
 
-                                                        @if ($order->status === 'processing')
-                                                            <span class="badge badge-pill badge-warning px-4 py-2"><h4>processing</h4></span>
-                                                        @elseif ($order->status === 'in delivering')
-                                                            <span class="badge badge-pill badge-info"><h4>in delivering</h4></span>
-                                                        @elseif ($order->status === 'delivered')
-                                                            <span class="badge badge-pill badge-success"><h4>delivered</h4></span>
+
+                                                        @if ($order->status === 'delivered')
+                                                           <a href="{{ route('user.review', ['id'=>$order->id,'type'=>'order']) }}" class="btn btn-primary">make review</a>
                                                         @else
-                                                            <span class="badge badge-pill badge-danger"><h4>faild</h4></span>
+                                                            <span ><h4>no delivered yet !!</h4></span>
                                                         @endif
 
                                                 </td>
