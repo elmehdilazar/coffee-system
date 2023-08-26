@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Booking;
+namespace App\Models\Order;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,5 +23,9 @@ class Booking extends Model
     function User()  {
         return $this->hasOne(User::class,"user_id");
 
+    }
+    function reviews()
+    {
+        return $this->morphMany(Reviews::class, "reviewable");
     }
 }

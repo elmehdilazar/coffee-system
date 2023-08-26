@@ -30,4 +30,8 @@ class Order extends Model
     function DetailesOrder()  {
      return $this->hasMany(DetailesOrder::class, "order_id");
     }
+    function reviews()
+    {
+        return $this->morphMany(Reviews::class, "reviewable");
+    }
 }

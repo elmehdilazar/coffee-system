@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Models\Booking\Booking;
 use App\Models\Order\Order;
+use App\Models\Order\Reviews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -55,6 +56,10 @@ class User extends Authenticatable
     }
     function Bookings()  {
         return $this->hasMany(Booking::class,"user_id");
+
+    }
+    function reviews()  {
+        return $this->hasMany(Reviews::class,"user_id");
 
     }
 }
