@@ -55,4 +55,9 @@ Route::prefix('user')->middleware("auth:web")->group(function () {
  Route::get('review/{id}/{type}',[UserController::class, 'AddReview'])->name("user.review");
  Route::post('review/{id}/{type}',[UserController::class, 'proccessingreview'])->name("user.reviewsend");
 });
+Route::prefix('admins')->group(function () {
+    Route::get('/',function ()  {
+return view("admin.index");
+    });
+});
 
