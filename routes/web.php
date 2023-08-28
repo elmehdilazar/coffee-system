@@ -58,6 +58,16 @@ Route::prefix('user')->middleware("auth:web")->group(function () {
 Route::prefix('admins')->group(function () {
     Route::get('/',function ()  {
 return view("admin.index");
+    })->name('admin.home');
+    Route::get('/login', function () {
+        return view("admin.login");
+    })->name("admin.login");
+
+    Route::prefix('product')->group(function () {
+        Route::get('/',function ()  {
+    return view("admin.products");
+        })->name('admin.products');
+
     });
 });
 
