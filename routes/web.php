@@ -55,13 +55,15 @@ Route::prefix('user')->middleware("auth:web")->group(function () {
  Route::get('review/{id}/{type}',[UserController::class, 'AddReview'])->name("user.review");
  Route::post('review/{id}/{type}',[UserController::class, 'proccessingreview'])->name("user.reviewsend");
 });
-Route::prefix('admins')->group(function () {
+Route::get('admins/login', function () {
+    return view("admin.login");
+})->name("admin.login")->middleware("check.for.auth");
+
+Route::prefix('admins')->middleware('auth:admin')->group(function () {
+
     Route::get('/',function ()  {
 return view("admin.index");
     })->name('admin.home');
-    Route::get('/login', function () {
-        return view("admin.login");
-    })->name("admin.login");
 
     Route::prefix('product')->group(function () {
         Route::get('/',function ()  {
