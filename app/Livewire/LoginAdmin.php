@@ -31,7 +31,7 @@ class LoginAdmin extends Component
             return  Redirect::route("admin.home");
         } else {
             session()->flash('error', 'user not  connected.');
-            return  redirect()->back();
+
         }
 
     }
