@@ -1,4 +1,5 @@
 <div>
+
     <div class="py-4">
         <div class="dropdown">
             <button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle"
@@ -85,7 +86,7 @@
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
                                 <h2 class="h6 text-gray-400 mb-0">Customers</h2>
-                                <h3 class="fw-extrabold mb-2">345k</h3>
+                                <h3 class="fw-extrabold mb-2">{{ $countCustomers }}</h3>
                             </div>
                             <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
@@ -125,14 +126,14 @@
                                 </svg>
                             </div>
                             <div class="d-sm-none">
-                                <h2 class="fw-extrabold h5">Revenue</h2>
-                                <h3 class="mb-1">$43,594</h3>
+                                <h2 class="fw-extrabold h5">orders</h2>
+                                <h3 class="mb-1">{{ $countOrders }}</h3>
                             </div>
                         </div>
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
-                                <h2 class="h6 text-gray-400 mb-0">Revenue</h2>
-                                <h3 class="fw-extrabold mb-2">$43,594</h3>
+                                <h2 class="h6 text-gray-400 mb-0">orders</h2>
+                                <h3 class="fw-extrabold mb-2">{{ $countOrders }}</h3>
                             </div>
                             <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
@@ -164,11 +165,42 @@
                         <div
                             class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex align-items-center justify-content-xl-center">
                             <div class="icon-shape icon-shape-tertiary rounded me-4 me-sm-0">
-                                <svg class="icon" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
+                                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt"
+                                    height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+
+                                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#31316A" stroke="none">
+                                        <path
+                                            d="M1182 5110 c-86 -18 -151 -78 -178 -166 -20 -68 -20 -461 1 -530 33
+-110 112 -164 241 -164 119 1 199 48 238 142 23 55 23 521 0 576 -19 46 -68
+98 -114 122 -43 22 -131 31 -188 20z" />
+                                        <path
+                                            d="M2563 5110 c-60 -12 -96 -34 -135 -80 -53 -61 -58 -91 -58 -350 0
+-259 5 -289 59 -351 49 -59 99 -79 194 -79 119 0 189 40 233 135 23 48 24 59
+24 295 0 237 -1 247 -24 295 -40 86 -101 127 -201 138 -27 3 -69 2 -92 -3z" />
+                                        <path
+                                            d="M3955 5111 c-78 -14 -143 -64 -176 -136 -16 -35 -19 -69 -19 -293 0
+-279 3 -298 63 -361 50 -52 99 -71 192 -71 70 0 86 4 132 30 108 62 123 112
+123 400 0 241 -8 289 -60 352 -53 64 -158 96 -255 79z" />
+                                        <path
+                                            d="M413 4635 c-102 -31 -185 -104 -232 -204 l-26 -56 -3 -512 -3 -513
+2411 0 2411 0 -3 513 -3 512 -32 66 c-39 78 -102 140 -181 177 -54 25 -67 27
+-228 30 l-172 4 -4 -114 c-3 -92 -8 -122 -26 -160 -107 -219 -381 -269 -550
+-100 -69 69 -95 136 -100 264 l-5 108 -347 0 -348 0 -4 -107 c-5 -133 -32
+-203 -109 -275 -167 -157 -439 -103 -536 107 -23 51 -28 76 -31 168 l-4 107
+-348 0 -347 0 -5 -108 c-5 -128 -31 -195 -100 -264 -169 -169 -443 -119 -550
+100 -18 38 -23 68 -26 160 l-4 112 -227 -1 c-157 0 -239 -4 -268 -14z" />
+                                        <path
+                                            d="M150 1818 c0 -1476 -3 -1408 66 -1538 44 -84 146 -185 227 -224 120
+-59 -9 -56 2117 -56 1865 0 1959 1 2021 18 182 51 335 214 374 399 12 57 15
+283 15 1401 l0 1332 -2410 0 -2410 0 0 -1332z m3597 749 c92 -47 146 -134 147
+-237 2 -124 27 -95 -796 -916 -811 -810 -776 -779 -893 -779 -111 0 -116 3
+-537 423 -268 266 -395 400 -415 436 -24 43 -28 62 -28 126 0 57 6 84 22 115
+25 48 85 106 132 130 53 26 139 31 202 10 50 -16 77 -41 334 -296 155 -154
+285 -279 290 -279 5 0 295 285 645 634 587 586 639 636 685 650 68 21 148 15
+212 -17z" />
+                                    </g>
                                 </svg>
                             </div>
                             <div class="d-sm-none">
@@ -178,8 +210,8 @@
                         </div>
                         <div class="col-12 col-xl-7 px-xl-0">
                             <div class="d-none d-sm-block">
-                                <h2 class="h6 text-gray-400 mb-0"> Bounce Rate</h2>
-                                <h3 class="fw-extrabold mb-2">50.88%</h3>
+                                <h2 class="h6 text-gray-400 mb-0"> bookings</h2>
+                                <h3 class="fw-extrabold mb-2">{{ $countBookings }}</h3>
                             </div>
                             <small class="text-gray-500">
                                 Feb 1 - Apr 1
@@ -197,12 +229,12 @@
                 </div>
             </div>
         </div>
-         <div class="col-12 mb-4">
+        <div class="col-12 mb-4">
             <div class="card bg-yellow-100 border-0 shadow">
                 <div class="card-header d-sm-flex flex-row align-items-center flex-0">
                     <div class="d-block mb-3 mb-sm-0">
                         <div class="fs-5 fw-normal mb-2">Sales Value</div>
-                        <h2 class="fs-3 fw-extrabold">$10,567</h2>
+                        <h2 class="fs-3 fw-extrabold">${{ $total}}</h2>
                         <div class="small mt-2">
                             <span class="fw-normal me-2">Yesterday</span>
                             <span class="fas fa-angle-up text-success"></span>
@@ -220,4 +252,42 @@
             </div>
         </div>
     </div>
+ @section("script")
+<script>
+
+
+
+
+        if(d.querySelector('.ct-chart-sales-value')) {
+        //Chart 5
+          new Chartist.Line('.ct-chart-sales-value', {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            series: [
+["{{$dataChart['Monday']}}","{{$dataChart['Tuesday']}}","{{$dataChart['Wednesday']}}","{{$dataChart['Thursday']}}","{{$dataChart['Friday']}}","{{$dataChart['Saturday']}}","{{$dataChart['Sunday']}}"]
+            ]
+          }, {
+            low: 0,
+            showArea: true,
+            fullWidth: true,
+            plugins: [
+              Chartist.plugins.tooltip()
+            ],
+            axisX: {
+                // On the x-axis start means top and end means bottom
+                position: 'end',
+                showGrid: true
+            },
+            axisY: {
+                // On the y-axis start means left and end means right
+                showGrid: false,
+                showLabel: false,
+                labelInterpolationFnc: function(value) {
+                    return '$' + (value / 1) + 'k';
+                }
+            }
+        });
+    }
+
+    </script>
+ @endsection
 </div>

@@ -52,15 +52,16 @@
 
     <!-- Volt CSS -->
     <link type="text/css" href="{{ asset('admin/css/volt.css') }}" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
     @livewireStyles
     @yield('auth')
 </head>
 
 <body>
-    @include('layouts.admins.message')
+
     <main class="@if (!isset($chek)) content @endif">
+            @include('layouts.admins.message')
         @if (!isset($chek))
             @include('layouts.admins.nav')
             <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
@@ -336,6 +337,7 @@
 
     <!-- Volt JS -->
     <script src="{{ asset('admin/assets/js/volt.js') }}"></script>
+    @yield("script")
 
 
 </body>
