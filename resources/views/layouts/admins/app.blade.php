@@ -44,11 +44,11 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Sweet Alert -->
-    <link type="text/css" href="{{ asset('admin/../../vendor/sweetalert2/dist/sweetalert2.min.css') }}"
+    <link type="text/css" href="{{ asset('admin/vendor/sweetalert2/dist/sweetalert2.min.css') }}"
         rel="stylesheet">
 
     <!-- Notyf -->
-    <link type="text/css" href="{{ asset('admin/../../vendor/notyf/notyf.min.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ asset('admin/vendor/notyf/notyf.min.css') }}" rel="stylesheet">
 
     <!-- Volt CSS -->
     <link type="text/css" href="{{ asset('admin/css/volt.css') }}" rel="stylesheet">
@@ -80,7 +80,7 @@
                                                 clip-rule="evenodd"></path>
                                         </svg>
                                     </span>
-                                    <input type="text" class="form-control" id="topbarInputIconLeft"
+                                    <input type="text" wire:model="search" class="form-control" id="topbarInputIconLeft"
                                         placeholder="Search" aria-label="Search" aria-describedby="topbar-addon">
                                 </div>
                             </form>
@@ -305,10 +305,10 @@
     <script src="{{ asset('admin/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
 
     <!-- Slider -->
-    <script src="{{ asset('admin/vendor/nouislider/distribute/nouislider.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/nouislider/dist/nouislider.min.js') }}"></script>
 
     <!-- Smooth scroll -->
-    <script src="{{ asset('adminvendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js') }}"></script>
 
     <!-- Charts -->
     <script src="{{ asset('admin/vendor/chartist/dist/chartist.min.js') }}"></script>
