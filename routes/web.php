@@ -67,6 +67,9 @@ return view("admin.index");
     Route::get('/Alladmins',function ()  {
 return view("admin.admins");
     })->name('admin.all');
+    Route::get('/orders',function ()  {
+return view("admin.orders");
+    })->name('admin.orders');
 
     Route::prefix('product')->group(function () {
         Route::get('/',function ()  {
