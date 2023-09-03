@@ -64,6 +64,9 @@ Route::prefix('admins')->middleware('auth:admin')->group(function () {
     Route::get('/',function ()  {
 return view("admin.index");
     })->name('admin.home');
+    Route::get('/Alladmins',function ()  {
+return view("admin.admins");
+    })->name('admin.all');
 
     Route::prefix('product')->group(function () {
         Route::get('/',function ()  {
