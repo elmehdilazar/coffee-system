@@ -30,7 +30,7 @@ class LoginAdmin extends Component
             session()->flash('success', 'user connected successfully .');
             return  Redirect::route("admin.home");
         } else {
-            session()->flash('error', 'user not  connected.');
+            session()->flash('error', 'email or password invalid.');
 
         }
 
