@@ -29,5 +29,6 @@ class OrderAdmin extends Component
         $order->status = $this->status;
         $order->update();
         $this->resetPage();
+        session()->flash('success', 'order successfully updated.');
     }
 }
