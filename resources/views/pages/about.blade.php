@@ -2,7 +2,7 @@
 @section('content')
     <section class="home-slider owl-carousel">
 
-        <div class="slider-item" style="background-image: url({{ asset('assets/images/bg_3.jpg') }});"
+        <div class="slider-item" style="background-image: url({{asset('assets/images/bg_3.jpg')}});"
             data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -20,7 +20,7 @@
     </section>
 
     <section class="ftco-about d-md-flex">
-        <div class="one-half img" style="background-image: url({{ asset('assets/images/about.jpg') }});"></div>
+        <div class="one-half img" style="background-image: url({{asset('assets/images/about.jpg')}});"></div>
         <div class="one-half ftco-animate">
             <div class="overlap">
                 <div class="heading-section ftco-animate ">
@@ -96,7 +96,7 @@
                             <div class="col-md-6">
                                 <div class="menu-entry">
                                     <a href="#" class="img"
-                                        style="background-image: url({{ asset('assets/images/' . $product->image) }});"></a>
+                                        style="background-image: url({{ asset('storage/images/' . $product->image) }});"></a>
                                 </div>
                             </div>
                         @endforeach

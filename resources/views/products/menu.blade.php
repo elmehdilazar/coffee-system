@@ -2,7 +2,7 @@
 @section('content')
     <section class="home-slider owl-carousel">
 
-        <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+        <div class="slider-item" style="background-image: url({{asset("assets/images/bg_3.jpg")}});" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row slider-text justify-content-center align-items-center">
@@ -104,7 +104,7 @@
                         @foreach ($categorie->Products as $product)
                             <div class="pricing-entry d-flex ftco-animate">
                                 <div class="img"
-                                    style="background-image: url({{ asset('assets/images/' . $product->image) }});"></div>
+                                    style="background-image: url({{ asset('storage/images/' . $product->image) }});"></div>
                                 <div class="desc pl-3">
                                     <div class="d-flex text align-items-center">
                                         <h3><span>{{ $product->name }} </span></h3>
@@ -165,7 +165,7 @@
                                                     <div class="col-md-4 text-center">
                                                         <div class="menu-wrap">
                                                             <a href="{{ route('product.single', ['id'=>$product->id]) }}" class="menu-img img mb-4 w-100"
-                                                                style="background-image: url({{ asset('assets/images/' . $product->image) }});"></a>
+                                                                style="background-image: url({{ asset('storage/images/' . $product->image) }});"></a>
                                                             <div class="text">
                                                                 <h3><a href="{{ route('product.single', ['id'=>$product->id]) }}">{{ $product->name }} </a></h3>
                                                                 <p>{{ $product->description }}</p>

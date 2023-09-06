@@ -2,7 +2,7 @@
 @section('content')
     <section class="home-slider owl-carousel">
 
-        <div class="slider-item" style="background-image: url({{ asset('assets/images/bg_3.jpg') }});"
+        <div class="slider-item" style="background-image: url({{ asset('storage/images/bg_3.jpg') }});"
             data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -22,8 +22,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mb-5 ftco-animate">
-                    <a href="{{ asset('assets/images/' . $product->image) }}" class="image-popup"><img
-                            src="{{ asset('assets/images/' . $product->image) }}" class="img-fluid"
+                    <a href="{{ asset('storage/images/' . $product->image) }}" class="image-popup"><img
+                            src="{{ asset('storage/images/' . $product->image) }}" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
                 <div class="col-lg-6 product-details pl-md-5 ftco-animate">
@@ -83,7 +83,7 @@
                 @foreach ($relatedProduct as $product)
                     <div class="col-md-3">
                         <div class="menu-entry">
-                            <a href="{{ route('product.single', ['id'=>$product->id]) }}" class="img" style="background-image: url({{asset("assets/images/".$product->image)}});"></a>
+                            <a href="{{ route('product.single', ['id'=>$product->id]) }}" class="img" style="background-image: url({{asset("storage/images/".$product->image)}});"></a>
                             <div class="text text-center pt-4">
                                 <h3><a href="{{ route('product.single', ['id'=>$product->id]) }}">{{$product->name}} </a></h3>
                                 <p> {{ $product->description}} </p>

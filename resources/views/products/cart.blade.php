@@ -253,8 +253,9 @@
 
                                                 <td class="image-prod">
                                                     <div class="img"
-                                                        style="background-image:url({{ asset('assets/images/' . $cart->Product->image) }});">
+                                                        style="background-image:url({{ asset('storage/images/' . $cart->Product->image) }});">
                                                     </div>
+
                                                 </td>
 
                                                 <td class="product-name">
