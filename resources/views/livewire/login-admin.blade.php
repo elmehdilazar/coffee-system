@@ -1,4 +1,5 @@
 <div>
+    @include("layouts.admins.message")
     <section class="vh-lg-100 mt-5 mt-lg-2 bg-soft d-flex justify-content-center align-items-center">
         <div class="container">
 
@@ -28,7 +29,7 @@
                                         wire:model.lazy="email" placeholder="example@company.com" id="email"
                                         autofocus>
 
-                                  
+
                                 </div>
                             </div>
                             <!-- End of Form -->
