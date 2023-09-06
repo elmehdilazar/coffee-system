@@ -13,8 +13,8 @@ class AdmisDashboard extends Component
     public $name;
     public $email;
     public $editing = false;
-    public $AdminId;
     public $adding = false;
+    public $AdminId;
     public $search='';
 
 
