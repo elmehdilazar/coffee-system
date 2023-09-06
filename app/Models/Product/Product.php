@@ -15,7 +15,8 @@ class Product extends Model
         "name",
         'description',
         'price',
-        'image'
+        'image',
+        'cat_id',
     ];
     public $timestamps = true;
     function Category()  {
