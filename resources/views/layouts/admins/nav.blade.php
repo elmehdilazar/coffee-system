@@ -50,13 +50,27 @@
           <span class="sidebar-text">Dashboard</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a href="{{route("admin.products")}}"  class="nav-link d-flex justify-content-between">
           <span>
             <span class="sidebar-icon">
+             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"></path><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+           </span>
+            <span class="sidebar-text">products</span>
+          </span>
+          <span>
+            <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{route("admin.categories")}}"  class="nav-link d-flex justify-content-between">
+          <span>
+            <span class="sidebar-icon">
               <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
             </span>
-            <span class="sidebar-text">products</span>
+            <span class="sidebar-text">categories</span>
           </span>
           <span>
             <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
@@ -67,8 +81,7 @@
         <a href="{{route("admin.orders")}}"  class="nav-link d-flex justify-content-between">
           <span>
             <span class="sidebar-icon">
-            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
-            </span>
+         <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> </span>
             <span class="sidebar-text">orders</span>
           </span>
           <span>
@@ -91,7 +104,8 @@
       </li>
 
 
-      <li class="nav-item">
+
+      {{-- <li class="nav-item">
         <span
           class="nav-link  collapsed  d-flex justify-content-between align-items-center"
           data-bs-toggle="collapse" data-bs-target="#submenu-components">
@@ -141,7 +155,7 @@
             </li>
           </ul>
         </div>
-      </li>
+      </li> --}}
       <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 
 
