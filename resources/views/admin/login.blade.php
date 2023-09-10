@@ -2,7 +2,7 @@
 @section('auth')
     @php
         $chek = true;
-  
+
     @endphp
 @endsection
 @section('content')

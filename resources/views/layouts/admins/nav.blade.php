@@ -35,15 +35,15 @@
     </div>
     <ul class="nav flex-column pt-3 pt-md-0">
       <li class="nav-item">
-        <a href="../../index.html" class="nav-link d-flex align-items-center">
+        <a href="{{url("/admins")}}" class="nav-link d-flex align-items-center">
           <span class="sidebar-icon">
             <img src="{{asset("admin/assets/img/brand/light.svg")}}" height="20" width="20" alt="Volt Logo">
           </span>
-          <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
+          <span class="mt-1 ms-1 sidebar-text">coffe bend</span>
         </a>
       </li>
-      <li class="nav-item  active ">
-        <a href="../../pages/dashboard/dashboard.html" class="nav-link">
+      <li class="nav-item   ">
+        <a href="{{url("/admins")}}" class="nav-link">
           <span class="sidebar-icon">
             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
           </span>
@@ -59,9 +59,7 @@
            </span>
             <span class="sidebar-text">products</span>
           </span>
-          <span>
-            <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
-          </span>
+
         </a>
       </li>
       <li class="nav-item">
@@ -84,9 +82,7 @@
          <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> </span>
             <span class="sidebar-text">bookings</span>
           </span>
-          <span>
-            <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
-          </span>
+
         </a>
       </li>
       <li class="nav-item">
@@ -96,9 +92,7 @@
          <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> </span>
             <span class="sidebar-text">orders</span>
           </span>
-          <span>
-            <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
-          </span>
+
         </a>
       </li>
       <li class="nav-item">
@@ -109,9 +103,7 @@
             </span>
             <span class="sidebar-text">admins</span>
           </span>
-          <span>
-            <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
-          </span>
+
         </a>
       </li>
 

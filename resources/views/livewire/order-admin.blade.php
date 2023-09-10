@@ -128,6 +128,9 @@
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
                                 <div class="dropdown-menu py-0">
+                                                <a class="dropdown-item rounded-top" data-bs-toggle="modal"
+                                        data-bs-target="#reviews{{ $order->id }}"><span
+                                            class="fas fa-eye me-2"></span>View reviews</a>
                                     <a class="dropdown-item rounded-top" data-bs-toggle="modal"
                                         data-bs-target="#details{{ $order->id }}"><span
                                             class="fas fa-eye me-2"></span>View Details</a>
@@ -138,7 +141,7 @@
                                     <a class="dropdown-item text-danger rounded-bottom" href="#"><span
                                             class="fas fa-trash-alt me-2"></span>Remove</a>
                                 </div>
-                                <div class="modal fade" id="modal-default{{ $order->id }}" tabindex="-1"
+                                <div class="modal fade " id="modal-default{{ $order->id }}" tabindex="-1"
                                     role="dialog" aria-labelledby="modal-default{{ $order->id }}"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -251,6 +254,30 @@
                                                 <button type="button" wire:click="updateStatus({{ $order->id }})"
                                                     class="btn btn-secondary" data-bs-dismiss="modal">Accept</button>
                                                 <button type="button" class="btn btn-link text-gray-600 ms-auto"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                       <div class="modal fade " id="reviews{{ $order->id }}" tabindex="-1"
+                                    role="dialog" aria-labelledby="reviews{{ $order->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="h6 modal-title">reviews order <span
+                                                        class="badge bg-info">N°{{ $order->id }} </span></h2>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div  class="card card-body border-0 shadow table-wrapper table-responsive">
+
+                                                    @livewire("reviews",["id"=>$order->id ,"type"=>"order"])
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-secondary text-gray-600 ms-auto"
                                                     data-bs-dismiss="modal">Close</button>
                                             </div>
                                         </div>

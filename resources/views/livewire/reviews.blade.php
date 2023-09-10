@@ -24,7 +24,12 @@
                         <span class="fw-normal"> {{ $review->name }}</span>
                     </td>
                     <td>
-                        <span class="fw-normal">{{ $review->message }} </span>
+                        <span class="fw-normal">
+                            <textarea class="form-control" disabled id="textarea" cols="6" rows="4">
+
+                                {{ $review->message }}
+                            </textarea>
+                        </span>
                     </td>
 
 
@@ -48,7 +53,7 @@
                     </td>
                 </tr>
             @endforeach
-         
+
 
 
 

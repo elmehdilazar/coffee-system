@@ -128,6 +128,7 @@
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
                                 <div class="dropdown-menu py-0">
+
                                     <a class="dropdown-item rounded-top" data-bs-toggle="modal"
                                         data-bs-target="#reviews{{ $booking->id }}"><span
                                             class="fas fa-eye me-2"></span>View reviews</a>
@@ -259,7 +260,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal fade" id="reviews{{ $booking->id }}" tabindex="-1"
+                                <div class="modal fade modal-xl" id="reviews{{ $booking->id }}" tabindex="-1"
                                     role="dialog" aria-labelledby="reviews{{ $booking->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
