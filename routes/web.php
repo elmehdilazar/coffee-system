@@ -70,6 +70,9 @@ return view("admin.admins");
     Route::get('/orders',function ()  {
 return view("admin.orders");
     })->name('admin.orders');
+    Route::get('/booking',function ()  {
+return view("admin.booking");
+    })->name('admin.booking');
     Route::get('/categories',function ()  {
 return view("admin.categories");
     })->name('admin.categories');
