@@ -1,5 +1,5 @@
 <div>
-    @include("layouts.admins.message")
+    @include('layouts.admins.message')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
         <div class="d-block mb-4 mb-md-0">
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -129,13 +129,17 @@
                                 </button>
                                 <div class="dropdown-menu py-0">
                                     <a class="dropdown-item rounded-top" data-bs-toggle="modal"
+                                        data-bs-target="#reviews{{ $booking->id }}"><span
+                                            class="fas fa-eye me-2"></span>View reviews</a>
+                                    <a class="dropdown-item rounded-top" data-bs-toggle="modal"
                                         data-bs-target="#details{{ $booking->id }}"><span
                                             class="fas fa-eye me-2"></span>View Details</a>
                                     <a class="dropdown-item" class="btn btn-block btn-gray-800 mb-3"
                                         data-bs-toggle="modal"
                                         data-bs-target="#modal-default{{ $booking->id }}"><span
                                             class="fas fa-edit me-2"></span>edit status</a>
-                                    <a class="dropdown-item text-danger rounded-bottom" wire:click="removeBooking({{$booking->id}})"><span
+                                    <a class="dropdown-item text-danger rounded-bottom"
+                                        wire:click="removeBooking({{ $booking->id }})"><span
                                             class="fas fa-trash-alt me-2"></span>Remove</a>
                                 </div>
                                 <div class="modal fade" id="modal-default{{ $booking->id }}" tabindex="-1"
@@ -174,7 +178,8 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h2 class="h6 modal-title">details booking <span class="badge bg-info">N°{{$booking->id}} </span></h2>
+                                                <h2 class="h6 modal-title">details booking <span
+                                                        class="badge bg-info">N°{{ $booking->id }} </span></h2>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -235,17 +240,43 @@
 
                                                 </div>
                                                 <div class="mx-2 d-flex justify-content-center">
-                                          <span class="text-primary mx-2">
-                                                     date of booking:<span class="badge bg-danger">{{ $booking->created_at->format('Y-m-d') }}</span>
+                                                    <span class="text-primary mx-2">
+                                                        date of booking:<span
+                                                            class="badge bg-danger">{{ $booking->created_at->format('Y-m-d') }}</span>
 
-                                                    </span> |  <span class="text-primary mx-2">
-                                                     date of update :<span class="badge bg-success">{{ $booking->updated_at->format('Y-m-d') }}</span>
+                                                    </span> | <span class="text-primary mx-2">
+                                                        date of update :<span
+                                                            class="badge bg-success">{{ $booking->updated_at->format('Y-m-d') }}</span>
 
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                          
+
+                                                <button type="button" class="btn btn-secondary text-gray-600 ms-auto"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="reviews{{ $booking->id }}" tabindex="-1"
+                                    role="dialog" aria-labelledby="reviews{{ $booking->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="h6 modal-title">reviews booking <span
+                                                        class="badge bg-info">N°{{ $booking->id }} </span></h2>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div  class="card card-body border-0 shadow table-wrapper table-responsive">
+
+                                                    @livewire("reviews",["id"=>$booking->id ,"type"=>"booking"])
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+
                                                 <button type="button" class="btn btn-secondary text-gray-600 ms-auto"
                                                     data-bs-dismiss="modal">Close</button>
                                             </div>
@@ -273,4 +304,3 @@
         </div>
     </div>
 </div>
-
