@@ -2,15 +2,7 @@
 
     <div class="py-4">
         <div class="dropdown">
-            <button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-                New Task
-            </button>
+           
             <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -88,7 +80,7 @@
                                 <h2 class="h6 text-gray-400 mb-0">Customers</h2>
                                 <h3 class="fw-extrabold mb-2">{{ $countCustomers }}</h3>
                             </div>
-                            <small class="d-flex align-items-center text-gray-500">
+                            {{-- <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
                                 <svg class="icon icon-xxs text-gray-500 ms-2 me-1" fill="currentColor"
                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +97,7 @@
                                             d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                                             clip-rule="evenodd"></path>
                                     </svg><span class="text-success fw-bolder">22%</span></div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -135,7 +127,7 @@
                                 <h2 class="h6 text-gray-400 mb-0">orders</h2>
                                 <h3 class="fw-extrabold mb-2">{{ $countOrders }}</h3>
                             </div>
-                            <small class="d-flex align-items-center text-gray-500">
+                            {{-- <small class="d-flex align-items-center text-gray-500">
                                 Feb 1 - Apr 1,
                                 <svg class="icon icon-xxs text-gray-500 ms-2 me-1" fill="currentColor"
                                     viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +144,7 @@
                                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                             clip-rule="evenodd"></path>
                                     </svg><span class="text-danger fw-bolder">2%</span></div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -213,7 +205,7 @@
                                 <h2 class="h6 text-gray-400 mb-0"> bookings</h2>
                                 <h3 class="fw-extrabold mb-2">{{ $countBookings }}</h3>
                             </div>
-                            <small class="text-gray-500">
+                            {{-- <small class="text-gray-500">
                                 Feb 1 - Apr 1
                             </small>
                             <div class="small d-flex mt-1">
@@ -223,7 +215,7 @@
                                             d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
                                             clip-rule="evenodd"></path>
                                     </svg><span class="text-success fw-bolder">4%</span></div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -235,16 +227,16 @@
                     <div class="d-block mb-3 mb-sm-0">
                         <div class="fs-5 fw-normal mb-2">Sales Value</div>
                         <h2 class="fs-3 fw-extrabold">${{ $total}}</h2>
-                        <div class="small mt-2">
+                        {{-- <div class="small mt-2">
                             <span class="fw-normal me-2">Yesterday</span>
                             <span class="fas fa-angle-up text-success"></span>
                             <span class="text-success fw-bold">10.57%</span>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="d-flex ms-auto">
+                    {{-- <div class="d-flex ms-auto">
                         <a href="#" class="btn btn-secondary text-dark btn-sm me-2">Month</a>
                         <a href="#" class="btn btn-dark btn-sm me-3">Week</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="card-body p-2">
                     <div class="ct-chart-sales-value ct-double-octave ct-series-g"></div>
@@ -252,9 +244,117 @@
             </div>
         </div>
     </div>
+          <div class="row">
+                <div class="col-12 col-xl-8">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="card border-0 shadow">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h2 class="fs-5 fw-bold mb-0">latest reviews</h2>
+                                        </div>
+                                        {{-- <div class="col text-end">
+                                            <a href="#" class="btn btn-sm btn-primary">See all</a>
+                                        </div> --}}
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table align-items-center table-flush">
+                                        <thead class="thead-light">
+                                        <tr>
+                                            <th class="border-bottom" scope="col">id</th>
+                                            <th class="border-bottom" scope="col">name</th>
+                                            <th class="border-bottom" scope="col">message</th>
+                                            <th class="border-bottom" scope="col">type</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($LatestReviwes as $review )
+
+                                            <tr>
+                                                <th class="text-gray-900" scope="row">
+                                                   {{ $review->id}}
+                                                </th>
+                                                <td class="fw-bolder text-gray-500">
+                                                   {{ $review->name}}
+                                                </td>
+                                                <td class="fw-bolder text-gray-500">
+                                                   {{Str::limit($review->message,50,"...")}}
+                                                </td>
+                                                <td class="fw-bolder text-gray-500">
+                                                 {{ Str::swap(["App\\Models\\Order\\" => ''], $review->reviewable_type)}}
+                                                </td>
+                                            </tr>
+                                            @endforeach
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="col-12 px-0 mb-4">
+                        <div class="card border-0 shadow">
+                            <div class="card-header d-flex flex-row align-items-center flex-0 border-bottom">
+                                <div class="d-block">
+                                    <div class="h6 fw-normal text-gray mb-2">Total reviwes</div>
+                                    <h2 class="h3 fw-extrabold">{{$countReviews}} </h2>
+                                    <div class="small mt-2">
+                                        {{-- <span class="fas fa-angle-up text-success"></span>
+                                        <span class="text-success fw-bold">18.2%</span> --}}
+                                    </div>
+                                </div>
+                                <div class="d-block ms-auto">
+                                    <div class="d-flex align-items-center text-end mb-2">
+                                        <span class="dot rounded-circle bg-gray-800 me-2"></span>
+                                        <span class="fw-normal small">booking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center text-end">
+                                        <span class="dot rounded-circle bg-secondary me-2"></span>
+                                        <span class="fw-normal small">orders</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-2">
+                                {{-- <div class="ct-chart-ranking ct-golden-section ct-series-a"></div> --}}
+<div class="bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
  @section("script")
 <script>
+new Chartist.Bar('.bar-chart', {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    series: [
+  ["{{$chartReviewsOrder['Monday']}}","{{$chartReviewsOrder['Tuesday']}}","{{$chartReviewsOrder['Wednesday']}}","{{$chartReviewsOrder['Thursday']}}","{{$chartReviewsOrder['Friday']}}","{{$chartReviewsOrder['Saturday']}}","{{$chartReviewsOrder['Sunday']}}"]
+  ,
+  ["{{$chartReviewsBooking['Monday']}}","{{$chartReviewsBooking['Tuesday']}}","{{$chartReviewsBooking['Wednesday']}}","{{$chartReviewsBooking['Thursday']}}","{{$chartReviewsBooking['Friday']}}","{{$chartReviewsBooking['Saturday']}}","{{$chartReviewsBooking['Sunday']}}"]
 
+    ]
+    }, {
+    low: 0,
+    showArea: true,
+    plugins: [
+        Chartist.plugins.tooltip()
+    ],
+    axisX: {
+        // On the x-axis start means top and end means bottom
+        position: 'end'
+    },
+    axisY: {
+        // On the y-axis start means left and end means right
+        showGrid: false,
+        showLabel: false,
+        offset: 0
+    }
+});
 
 
 
